@@ -5,6 +5,7 @@
   <title>Login - Villa</title>
   <link rel="stylesheet" href="assets/css/style.css"> <!-- 기존 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/templatemo-villa-agency.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
