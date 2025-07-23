@@ -7,7 +7,7 @@
 
   <servlet>
       <servlet-name>LoginServlet</servlet-name>
-      <servlet-class>com.4gl.app.LoginServlet</servlet-class>
+      <servlet-class>com.ksh.app.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
       <servlet-name>LoginServlet</servlet-name>
@@ -15,7 +15,7 @@
   </servlet-mapping>
   <servlet>
       <servlet-name>ProfileServlet</servlet-name>
-      <servlet-class>com.4gl.app.ProfileServlet</servlet-class>
+      <servlet-class>com.ksh.app.ProfileServlet</servlet-class>
   </servlet>
   <servlet-mapping>
       <servlet-name>ProfileServlet</servlet-name>
@@ -23,7 +23,7 @@
   </servlet-mapping>
   <servlet>
       <servlet-name>PingServlet</servlet-name>
-      <servlet-class>com.4gl.app.PingServlet</servlet-class>
+      <servlet-class>com.ksh.app.PingServlet</servlet-class>
   </servlet>
   <servlet-mapping>
       <servlet-name>PingServlet</servlet-name>
