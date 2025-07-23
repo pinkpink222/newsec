@@ -6,14 +6,6 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-      <servlet-name>LoginServlet</servlet-name>
-      <servlet-class>com.ksh.app.LoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>LoginServlet</servlet-name>
-      <url-pattern>/login</url-pattern>
-  </servlet-mapping>
-  <servlet>
       <servlet-name>ProfileServlet</servlet-name>
       <servlet-class>com.ksh.app.ProfileServlet</servlet-class>
   </servlet>
