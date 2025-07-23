@@ -32,11 +32,5 @@
       <version>8.0.33</version>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>org.mariadb.jdbc</groupId>
-      <artifactId>mariadb-java-client</artifactId>
-      <version>3.3.2</version>
-      <scope>compile</scope>
-    </dependency>
   </dependencies>
 </project>
