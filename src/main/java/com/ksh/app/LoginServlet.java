@@ -33,8 +33,10 @@ public class LoginServlet extends HttpServlet {
 		request.setAttribute("username", username);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/mysec/success.jsp");
 		dispatcher.forward(request, response);
-            } else {
-                out.println("<h1>Login fale. Check your id or password.</h1>");
+            } else  {
+		request.setAttribute("username", username);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/mysec/fail.jsp");
+                dispatcher.forward(request, response);
             }
         } catch (SQLException e) {
             out.println("<h1>Database error: " + e.getMessage() + "</h1>");
