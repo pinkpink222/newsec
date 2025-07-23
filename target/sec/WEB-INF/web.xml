@@ -13,12 +13,4 @@
       <servlet-name>ProfileServlet</servlet-name>
       <url-pattern>/profile</url-pattern>
   </servlet-mapping>
-  <servlet>
-      <servlet-name>PingServlet</servlet-name>
-      <servlet-class>com.ksh.app.PingServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>PingServlet</servlet-name>
-      <url-pattern>/ping</url-pattern>
-  </servlet-mapping>
-  </web-app>
+</web-app>
