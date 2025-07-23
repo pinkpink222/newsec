@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 		dispatcher.forward(request, response);
             } else  {
 		request.setAttribute("username", username);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/mysec/fail.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/mysec/fale.jsp");
                 dispatcher.forward(request, response);
             }
         } catch (SQLException e) {
