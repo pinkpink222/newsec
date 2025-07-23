@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.RequestDispatcher;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -29,7 +30,9 @@ public class LoginServlet extends HttpServlet {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             if (rs.next()) {
-                out.println("<h1>Login success " + username + "user!</h1>");
+		request.setAttribute("username", username);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/mysec/success.jsp");
+		dispatcher.forward(request, response);
             } else {
                 out.println("<h1>Login fale. Check your id or password.</h1>");
             }
