@@ -29,12 +29,12 @@ public class LoginServlet extends HttpServlet {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             if (rs.next()) {
-                out.println("<h1>로그인 성공! 환영합니다, " + username + "님!</h1>");
+                out.println("<h1>Login success " + username + "user!</h1>");
             } else {
-                out.println("<h1>로그인 실패. 아이디 또는 비밀번호가 틀렸어요.</h1>");
+                out.println("<h1>Login fale. Check your id or password.</h1>");
             }
         } catch (SQLException e) {
-            out.println("<h1>데이터베이스 오류: " + e.getMessage() + "</h1>");
+            out.println("<h1>Database error: " + e.getMessage() + "</h1>");
             e.printStackTrace();
         }
     }
