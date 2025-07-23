@@ -19,8 +19,8 @@ public class LoginServlet extends HttpServlet {
         String sql = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
 
         String dbUrl = "jdbc:mariadb://localhost:3306/mydb";
-        String dbUser = "root";
-        String dbPass = "rocky"; // <-- 여기를 실제 비밀번호로 바꿔주세요!
+        String dbUser = "myappuser";
+        String dbPass = "myappuser123"; // <-- 여기를 실제 비밀번호로 바꿔주세요!
 
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();

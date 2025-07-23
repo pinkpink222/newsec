@@ -33,12 +33,12 @@
             <artifactId>jakarta.servlet.jsp-api</artifactId>
             <version>3.1.1</version> <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
+	
+	<dependency>
+	    <groupId>org.mariadb.jdbc</groupId>
 	    <artifactId>mariadb-java-client</artifactId>
-            <version>3.3.2</version>
-        </dependency>
+	    <version>3.3.2</version>
+	</dependency>
 
     </dependencies>
 
