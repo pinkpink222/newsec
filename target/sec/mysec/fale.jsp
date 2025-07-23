@@ -43,8 +43,8 @@
           <h6>| Login False</h6>
           <h2>Try again, <%= request.getAttribute("strager") %>!</h2>
           <p class="text-muted mt-3">Check your ID OR PASSWORD!</p>
-          <a href="profile.jsp" class="btn btn-success mt-4 me-2"><i class="fa fa-user-circle"></i> way out</a>
-          <a href="index.html" class="btn btn-outline-secondary mt-4"><i class="fa fa-sign-out-alt"></i> someone stranger</a>
+          <a href="login.jsp" class="btn btn-success mt-4 me-2"><i class="fa fa-user-circle"></i> try again</a>
+          <a href="index.html" class="btn btn-outline-secondary mt-4"><i class="fa fa-sign-out-alt"></i> go home</a>
         </div>
       </div>
     </div>
