@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
         // --- 취약한 SQL Injection 코드 ---
         String sql = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
 
-        String dbUrl = "jdbc:mysql://localhost:3306/mydb";
+        String dbUrl = "jdbc:mariadb://localhost:3306/mydb";
         String dbUser = "root";
         String dbPass = "rocky"; // <-- 여기를 실제 비밀번호로 바꿔주세요!
 
