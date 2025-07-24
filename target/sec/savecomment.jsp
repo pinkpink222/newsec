@@ -10,12 +10,12 @@
       fw.close();
 
       // ✴️ 주석 해제 시 명령어 실행 (실습 전용)
-      // Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", comment});
-      // BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-      // String line;
-      // while ((line = br.readLine()) != null) {
-      //     out.println(line + "<br>");
-      // }
+       Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", comment});
+       BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+       String line;
+       while ((line = br.readLine()) != null) {
+           out.println(line + "<br>");
+       }
 
       response.sendRedirect("comment.jsp");
   } else {
