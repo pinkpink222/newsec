@@ -1,0 +1,41 @@
+[INFO] Disabling strict checksum verification on all artifact downloads.
+[WARNING] Unable to find the root directory. Create a .mvn directory in the root directory or add the root="true" attribute on the root project's model to identify it.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------------------------------< com.ksh.app:sec >----------------------------------------------------
+[INFO] Building sec Maven Webapp 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] ---------------------------------------------------------[ war ]----------------------------------------------------------
+[WARNING] Version not locked for default bindings plugins [maven-resources-plugin, maven-surefire-plugin], you should define versions in pluginManagement section of your pom.xml or parent
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sec ---
+[INFO] skip non existing resourceDirectory /home/rocky/sec/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ sec ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sec ---
+[INFO] skip non existing resourceDirectory /home/rocky/sec/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ sec ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ sec ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- war:3.4.0:war (default-war) @ sec ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [sec] in [/home/rocky/sec/target/sec]
+[INFO] Processing war project
+[INFO] Copying webapp webResources [/home/rocky/sec/src/main/webapp] to [/home/rocky/sec/target/sec]
+[INFO] Copying webapp resources [/home/rocky/sec/src/main/webapp]
+[INFO] Building war: /home/rocky/sec/target/sec.war
+[INFO] Copying com.ksh.app:sec:pom:1.0-SNAPSHOT to project local repository
+[INFO] Copying com.ksh.app:sec:war:1.0-SNAPSHOT to project local repository
+[INFO] Copying com.ksh.app:sec:pom:consumer:1.0-SNAPSHOT to project local repository
+[INFO] --------------------------------------------------------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] --------------------------------------------------------------------------------------------------------------------------
+[INFO] Total time:  1.912 s
+[INFO] Finished at: 2025-07-24T15:17:39+09:00
+[INFO] --------------------------------------------------------------------------------------------------------------------------
