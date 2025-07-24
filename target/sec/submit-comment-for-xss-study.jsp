@@ -1,49 +1,53 @@
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
-request.setCharacterEncoding("UTF-8");
-
-// input
-String comment = request.getParameter("comment_content");
-
-if (comment != null && !comment.trim().isEmpty()) {
-    // CONNECT DB
     String url = "jdbc:mysql://localhost:3306/xssdb";
     String user = "myappuser";
     String password = "myappuser123";
 
     Connection conn = null;
     PreparedStatement pstmt = null;
-
-    try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection(url, user, password);
-
-        String sql = "INSERT INTO guestbook (name, comment) VALUES (?, ?)";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, "anonymous"); // 고정 이름
-        pstmt.setString(2, comment);     // 사용자 입력
-        pstmt.executeUpdate();
-
-    } catch (Exception e) {
-        out.println("DB error: " + e.getMessage());
-    } finally {
-        if (pstmt != null) pstmt.close();
-        if (conn != null) conn.close();
-    }
-}
+    ResultSet rs = null;
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Comment Submitted</title>
+    <title>Comment Log</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h3>✅ 코멘트가 등록되었습니다!</h3>
-    <p><%= comment %></p>
-    <a href="contact.html">← 돌아가기</a>
+  <div class="container mt-5">
+    <h3>📝 Stored Comments</h3>
+    <div class="list-group">
+<%
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conn = DriverManager.getConnection(url, user, password);
+
+        String sql = "SELECT comment FROM guestbook ORDER BY id DESC";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            String cmt = rs.getString("comment");
+%>
+      <div class="list-group-item"><%= cmt %></div>
+<%
+        }
+
+    } catch (Exception e) {
+        out.println("DB error: " + e.getMessage());
+    } finally {
+        if (rs != null) rs.close();
+        if (pstmt != null) pstmt.close();
+        if (conn != null) conn.close();
+    }
+%>
+    </div>
+    <a href="contact.html" class="btn btn-primary mt-3">← Back</a>
+  </div>
 </body>
 </html>
 

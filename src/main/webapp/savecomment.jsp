@@ -1,32 +1,25 @@
-<%@ page import="java.sql.*" %>
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.io.*" %>
 <%
-request.setCharacterEncoding("UTF-8");
+  request.setCharacterEncoding("UTF-8");
+  String comment = request.getParameter("comment_content");
 
-String comment = request.getParameter("comment");
+  if (comment != null && !comment.trim().isEmpty()) {
+      // 댓글 저장
+      FileWriter fw = new FileWriter(application.getRealPath("/") + "comments.txt", true);
+      fw.write(comment + "\n");
+      fw.close();
 
-if (comment != null && !comment.trim().isEmpty()) {
-    String url = "jdbc:mariadb://localhost:3306/myxssdb";
-    String user = "myappuser";
-    String password = "myappuser123";
+      // ✴️ 주석 해제 시 명령어 실행 (실습 전용)
+      // Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", comment});
+      // BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+      // String line;
+      // while ((line = br.readLine()) != null) {
+      //     out.println(line + "<br>");
+      // }
 
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-
-    try {
-        Class.forName("org.mariadb.jdbc.Driver");
-        conn = DriverManager.getConnection(url, user, password);
-
-        String sql = "INSERT INTO mytable (comment) VALUES (?)";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, comment);
-        pstmt.executeUpdate();
-    } catch (Exception e) {
-        out.println("DB Error: " + e.getMessage());
-    } finally {
-        if (pstmt != null) try { pstmt.close(); } catch(Exception e) {}
-        if (conn != null) try { conn.close(); } catch(Exception e) {}
-    }
-}
-response.sendRedirect("reply.jsp");
+      response.sendRedirect("comment.jsp");
+  } else {
+      out.println("Comment is empty.");
+  }
 %>
+
